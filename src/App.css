@@ -1,69 +1,108 @@
-body, html {
-  width: 100%;
+html {
   height: 100%;
-  background-color: #000d14;
-  font-family: "Erasaur";
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-  margin-top: 250px;
-}
-
-.parent {
-  width: 1000px;
-  height: 750px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.child {
-  width: 100%;
-  height: 100%;
-  background-color: #000d14; /* fallback color */
-  background-image: url("./background.png");
-  background-position: center;
+body {
+  background-image: url('./background.png');
+  background-repeat: no-repeat;
   background-size: cover;
-  transition: all .5s;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  font-family: "Erasaur";
 }
 
-.parent:hover .child,
-.parent:focus .child {
-  transform: scale(1.5);
+@keyframes showTitle {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
 }
 
 .button {
-  color: white; /* Good thing we set a fallback color! */
-  background-color: #000d14;
-  border: 1px solid White;
-  border-radius: 5px;
-  font-family: sans-serif;
-  padding: 10px;
-  position: static;
-  display: none;
   margin: 0 auto;
+  color: #ffbf00;
+  background-color: #000d14;
+  border: 2px solid #ffbf00;
+  border-radius: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  font-family: "Erasaur";
 }
 
-.parent:hover button,
-.parent:focus button {
-  display: block;
-}
-
-.parent:hover h1,
-.parent:focus h1 {
-  display: block;
+.button-hidden {
+  margin: 0 auto;
+  color: #ffbf00;
+  background-color: #000d14;
+  border: 2px solid #ffbf00;
+  border-radius: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px;
+  font-family: "Erasaur";
+  visibility: hidden;
 }
 
 .title {
+  margin: 0 auto 100px auto;
   color: White;
-  font-size: 100px;
-  display: none;
-  margin: 0 auto;
+  font-size: 200px;
+  animation-name: showTitle;
+  animation-duration: 4s;
+}
+
+.fade-in {
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+}
 }
